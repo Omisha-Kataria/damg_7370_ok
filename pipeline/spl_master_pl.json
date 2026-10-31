@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.files_list",
+						"value": "@activity('Get_Source_File_List').output.childItems",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -33,7 +33,7 @@
 							"typeProperties": {
 								"variableName": "file_name",
 								"value": {
-									"value": "@concat('spl_fall2026_',substring(replace(split(item(),'_')[3],'.csv',''),0,4),'_',substring(replace(split(item(),'_')[3],'.csv',''),4,2),'_',substring(replace(split(item(),'_')[3],'.csv',''),6,2),'.parquet')",
+									"value": "@concat('spl_fall2026_',substring(replace(split(item().name,'_')[3],'.csv',''),0,4),'_',substring(replace(split(item().name,'_')[3],'.csv',''),4,2),'_',substring(replace(split(item().name,'_')[3],'.csv',''),6,2),'.parquet')",
 									"type": "Expression"
 								}
 							}
@@ -65,7 +65,7 @@
 									"target_folder_name": "@pipeline().parameters.target_folder_name",
 									"source_folder_name": "@pipeline().parameters.source_folder_name",
 									"source_file_name": {
-										"value": "@item()",
+										"value": "@item().name",
 										"type": "Expression"
 									},
 									"target_file_name": "@variables('file_name')"
