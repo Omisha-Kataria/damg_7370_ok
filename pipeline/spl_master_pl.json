@@ -1,0 +1,91 @@
+{
+	"name": "spl_master_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEachSPL_File",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Get_Source_File_List",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.files_list",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Set_filename",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "file_name",
+								"value": {
+									"value": "@item()",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Get_Source_File_List",
+				"type": "GetMetadata",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "csv_files_ds",
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": "source-files",
+							"folder_name": "seattle_pet_license"
+						}
+					},
+					"fieldList": [],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"files_list": {
+				"type": "array",
+				"defaultValue": "['Seattle_Pet_Licenses_20261030.csv', 'Seattle_Pet_Licenses_20261015.csv', 'Seattle_Pet_Licenses_20261001.csv', 'Seattle_Pet_Licenses_20260915.csv']"
+			}
+		},
+		"variables": {
+			"file_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
