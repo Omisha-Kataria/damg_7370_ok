@@ -62,7 +62,7 @@
 								"parameters": {
 									"target_container_name": "raw",
 									"source_container_name": "source-files",
-									"target_folder_name": "spl",
+									"target_folder_name": "spl_part_b",
 									"source_folder_name": "seattle_pet_license",
 									"source_file_name": {
 										"value": "@item()",
