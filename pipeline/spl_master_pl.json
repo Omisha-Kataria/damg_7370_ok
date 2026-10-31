@@ -78,7 +78,10 @@
 		"parameters": {
 			"files_list": {
 				"type": "array",
-				"defaultValue": "['Seattle_Pet_Licenses_20261030.csv', 'Seattle_Pet_Licenses_20261015.csv', 'Seattle_Pet_Licenses_20261001.csv', 'Seattle_Pet_Licenses_20260915.csv']"
+				"defaultValue": [
+					"omisha.csv",
+					"nitin.csv"
+				]
 			}
 		},
 		"variables": {
