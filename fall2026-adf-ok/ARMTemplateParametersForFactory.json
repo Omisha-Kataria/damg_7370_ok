@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "fall2026-adf-ok"
+		},
+		"fall2026_kvt_ok_ls_properties_typeProperties_baseUrl": {
+			"value": "https://fall2026-ok-kvt.vault.azure.net/"
+		},
+		"fall2026_sqldb_ok_ls_properties_typeProperties_server": {
+			"value": "7370fall2026-ok.database.windows.net"
+		},
+		"fall2026_sqldb_ok_ls_properties_typeProperties_database": {
+			"value": "free-sql-db-8379863"
+		},
+		"fall2026_storage_ok_ls_properties_typeProperties_url": {
+			"value": "https://fall2026storageok.dfs.core.windows.net/"
+		}
+	}
+}
