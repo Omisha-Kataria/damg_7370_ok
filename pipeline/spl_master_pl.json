@@ -37,6 +37,39 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "Execute_convert_to_parquet",
+							"type": "ExecutePipeline",
+							"dependsOn": [
+								{
+									"activity": "Set_filename",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "source_to_parquet_pipeline",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"target_container_name": "raw",
+									"source_container_name": "source-files",
+									"target_folder_name": "spl",
+									"source_folder_name": "seattle_pet_license",
+									"source_file_name": {
+										"value": "@item()",
+										"type": "Expression"
+									}
+								}
+							}
 						}
 					]
 				}
@@ -79,8 +112,10 @@
 			"files_list": {
 				"type": "array",
 				"defaultValue": [
-					"omisha.csv",
-					"nitin.csv"
+					"Seattle_Pet_Licenses_20260915.csv",
+					"Seattle_Pet_Licenses_20261001.csv",
+					"Seattle_Pet_Licenses_20261015.csv",
+					"Seattle_Pet_Licenses_20261030.csv"
 				]
 			}
 		},
