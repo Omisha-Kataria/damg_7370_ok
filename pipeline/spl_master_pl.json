@@ -90,7 +90,11 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "csv_folder_ds",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": "@pipeline().parameters.source_container_name",
+							"folder_name": "@pipeline().parameters.source_folder_name"
+						}
 					},
 					"fieldList": [
 						"childItems"
