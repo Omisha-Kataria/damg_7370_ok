@@ -33,7 +33,7 @@
 							"typeProperties": {
 								"variableName": "file_name",
 								"value": {
-									"value": "@item()",
+									"value": "@concat('spl_fall2026_',substring(replace(split(item(),'_')[3],'.csv',''),0,4),'_',substring(replace(split(item(),'_')[3],'.csv',''),4,2),'_',substring(replace(split(item(),'_')[3],'.csv',''),6,2),'.parquet')",
 									"type": "Expression"
 								}
 							}
@@ -100,6 +100,7 @@
 					"fieldList": [],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
