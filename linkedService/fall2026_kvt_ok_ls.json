@@ -1,0 +1,11 @@
+{
+	"name": "fall2026_kvt_ok_ls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://fall2026-ok-kvt.vault.azure.net/"
+		}
+	}
+}

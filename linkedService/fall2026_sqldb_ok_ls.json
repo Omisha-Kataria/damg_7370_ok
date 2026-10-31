@@ -1,0 +1,15 @@
+{
+	"name": "fall2026_sqldb_ok_ls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "7370fall2026-ok.database.windows.net",
+			"database": "free-sql-db-8379863",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}

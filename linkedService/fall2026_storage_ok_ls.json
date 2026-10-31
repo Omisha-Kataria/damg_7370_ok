@@ -1,0 +1,11 @@
+{
+	"name": "fall2026_storage_ok_ls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://fall2026storageok.dfs.core.windows.net/"
+		}
+	}
+}
