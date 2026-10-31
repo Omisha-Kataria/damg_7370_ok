@@ -60,15 +60,30 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"target_container_name": "@pipeline().parameters.target_container_name",
-									"source_container_name": "@pipeline().parameters.source_container_name",
-									"target_folder_name": "@pipeline().parameters.target_folder_name",
-									"source_folder_name": "@pipeline().parameters.source_folder_name",
+									"target_container_name": {
+										"value": "@pipeline().parameters.target_container_name",
+										"type": "Expression"
+									},
+									"source_container_name": {
+										"value": "@pipeline().parameters.source_container_name",
+										"type": "Expression"
+									},
+									"target_folder_name": {
+										"value": "@pipeline().parameters.target_folder_name",
+										"type": "Expression"
+									},
+									"source_folder_name": {
+										"value": "@pipeline().parameters.source_folder_name",
+										"type": "Expression"
+									},
 									"source_file_name": {
 										"value": "@item().name",
 										"type": "Expression"
 									},
-									"target_file_name": "@variables('file_name')"
+									"target_file_name": {
+										"value": "@variables('file_name')",
+										"type": "Expression"
+									}
 								}
 							}
 						}
