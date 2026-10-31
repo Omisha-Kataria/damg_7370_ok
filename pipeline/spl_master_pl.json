@@ -89,14 +89,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "csv_files_ds",
-						"type": "DatasetReference",
-						"parameters": {
-							"container_name": "source-files",
-							"folder_name": "seattle_pet_license"
-						}
+						"referenceName": "csv_folder_ds",
+						"type": "DatasetReference"
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"recursive": true,
