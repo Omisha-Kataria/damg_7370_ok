@@ -144,7 +144,17 @@
 				"outputs": [
 					{
 						"referenceName": "sql_spl_ds",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": {
+								"value": "@pipeline().parameters.target_schema_name",
+								"type": "Expression"
+							},
+							"table_name": {
+								"value": "@pipeline().parameters.target_table_name",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
