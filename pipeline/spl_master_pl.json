@@ -67,7 +67,8 @@
 									"source_file_name": {
 										"value": "@item()",
 										"type": "Expression"
-									}
+									},
+									"target_file_name": "@variables('file_name')"
 								}
 							}
 						}
