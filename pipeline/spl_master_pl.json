@@ -60,10 +60,10 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"target_container_name": "raw",
-									"source_container_name": "source-files",
-									"target_folder_name": "spl_part_b",
-									"source_folder_name": "seattle_pet_license",
+									"target_container_name": "@pipeline().parameters.target_container_name",
+									"source_container_name": "@pipeline().parameters.source_container_name",
+									"target_folder_name": "@pipeline().parameters.target_folder_name",
+									"source_folder_name": "@pipeline().parameters.source_folder_name",
 									"source_file_name": {
 										"value": "@item()",
 										"type": "Expression"
@@ -119,6 +119,22 @@
 					"Seattle_Pet_Licenses_20261015.csv",
 					"Seattle_Pet_Licenses_20261030.csv"
 				]
+			},
+			"source_container_name": {
+				"type": "string",
+				"defaultValue": "source-files"
+			},
+			"source_folder_name": {
+				"type": "string",
+				"defaultValue": "seattle_pet_license"
+			},
+			"target_container_name": {
+				"type": "string",
+				"defaultValue": "raw"
+			},
+			"target_folder_name": {
+				"type": "string",
+				"defaultValue": "spl_part_b"
 			}
 		},
 		"variables": {
